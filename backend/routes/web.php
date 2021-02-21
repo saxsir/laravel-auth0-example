@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\Auth0IndexController;
+use Auth0\Login\Auth0Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
