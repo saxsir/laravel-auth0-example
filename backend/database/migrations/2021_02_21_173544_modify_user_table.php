@@ -16,8 +16,11 @@ class ModifyUserTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('sub')->unique();
 
-            $table->renameColumn('password', '__unused_password');
-            $table->renameColumn('email_verified_at', '__unused_email_verified_at');
+            $table->renameColumn('password', '__unused_password')
+                ->nullable(true)
+                ->change();
+            $table->renameColumn('email_verified_at', '__unused_email_verified_at')
+                ->change();
         });
     }
 
